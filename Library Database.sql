@@ -1,0 +1,72 @@
+-- CREATE TABLE Students(
+-- 	student_id integer NOT NULL primary key,
+-- 	stu_name character varying ,
+-- 	stu_contact integer unique,
+-- 	addresss character varying,
+-- 	Date_of_borrowing date,
+-- 	Date_of_return date
+-- )
+-- CREATE TABLE Publishing_company(
+-- 	company_id integer NOT NULL primary key,
+-- 	Name character varying
+
+-- )
+-- CREATE TABLE Shifts(
+-- 	shift_id integer not null primary key,
+-- 	Name character varying,
+-- 	Duration time without time zone
+
+-- )
+
+-- CREATE TABLE Librarian(
+-- 	Librarian_id integer NOT NULL primary key,
+-- 	Name character varying,
+-- 	Email character varying,
+-- 	Telephone_number integer unique,
+-- 	shift_id integer NOT NULL, 
+-- 	foreign key (shift_id) references Shifts(shift_id)
+-- )
+-- CREATE TABLE Author(
+-- 	author_id integer NOT NULL primary key,
+--     name character varying,
+--     email character varying ,
+--     bio character varying ,
+--     author_contact integer,
+--     company_id integer NOT NULL,
+-- 	foreign key (company_id) references Publishing_company(company_id)
+-- )
+-- CREATE TABLE Books(
+	
+--     book_id integer NOT NULL primary key,
+--     book_title character varying NOT NULL,
+--     price integer NOT NULL,
+--     description character varying NOT NULL,
+--     publish_date date NOT NULL,
+--     publish_year date NOT NULL,
+--     "ISBN_number" integer NOT NULL,
+--     image bytea NOT NULL,
+--     author_id integer NOT NULL,
+-- 	foreign key (author_id) references Author(author_id),
+--     student_id integer NOT NULL,
+-- 	foreign key (student_id) references Students(student_id)
+-- )
+-- INSERT INTO public."Shifts"("shift_id", "Name", "Duration")
+-- VALUES('1', 'morning','8:00'),
+-- ('2','evening','6:00'),
+-- ('3','morning','10:00'),
+-- ('4','evening','11:00');
+-- INSERT INTO public."Publishing_company"("company_id","Name")
+-- VALUES('256','MK publishers'),
+-- ('257','KLS publishers'),
+-- ( '258','j5 publishers'),
+-- ('259','PAsha UG'),
+-- ('255','NER publishers');
+-- INSERT INTO public."Librarian"("Librarian_id","Name","Email","Telephone_number","shift_id")
+-- VALUES('1','Kisakye','kisakye@gmail.com','75345','4'),
+-- ('2','Magezi','magezi@jek.com','78097','1'),
+-- ('3','Tumu','tumu@ason.com','76009','2'),
+-- ('4','Viak','vivian@kk.com','74023','3'),
+-- ('5','karungi','karungi@robs.com','70012','4');
+INSERT INTO public."Author"("author_id","name","email","bio","author_contact","company_id")
+VALUES('6','Peterson','peterson@gmail.com','ugandan','78907','255');
+
